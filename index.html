@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miroslav – Python developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--ink:#14213d;--muted:#52607a;--line:#cfd8e4;--accent:#2f6fed;--panel:#fff;--bubble:#e3ebfb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 20px 64px}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:8px 0 28px}
+.name{font:700 18px Sora,sans-serif}
+.lang button{font:500 14px Inter,sans-serif;border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 11px;margin-left:4px;border-radius:8px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:12px 0 48px}
+.hero h1{font-size:clamp(30px,5.4vw,46px);font-weight:700;letter-spacing:-.02em}
+.hero p{color:var(--muted);margin:16px 0 24px;max-width:46ch}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:500;padding:13px 22px;border-radius:10px}
+.btn:hover{background:#2358c4}
+.chat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.chat small{color:var(--muted);font-size:13px}
+.b{padding:10px 14px;border-radius:14px;max-width:88%;font-size:15px;line-height:1.45}
+.b.u{background:var(--bubble);align-self:flex-start;border-bottom-left-radius:4px}
+.b.r{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+section{padding:36px 0;border-top:1px solid var(--line)}
+section>h2{font-size:26px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15.5px}
+.price{font:700 16px Sora,sans-serif}
+.work{display:flex;flex-direction:column;gap:14px}
+.work .card{display:grid;gap:4px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tags span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.about p{max-width:62ch;margin:0 0 12px}
+.contacts{display:flex;flex-wrap:wrap;gap:12px}
+.contacts a,.contacts span{border:1px solid var(--line);background:var(--panel);padding:10px 16px;border-radius:10px;text-decoration:none}
+footer{color:var(--muted);font-size:14px;padding-top:24px}
+@media(max-width:720px){.hero{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.b{animation:pop .4s both}.b:nth-of-type(2){animation-delay:.5s}@keyframes pop{from{opacity:0;transform:translateY(6px)}}}
+</style>
+</head>
+<body>
+<main>
+<div class="top">
+  <div class="name">Miroslav</div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="en" aria-pressed="true">EN</button><button data-l="cs" aria-pressed="false">CS</button><button data-l="ru" aria-pressed="false">RU</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div>
+    <h1 data-t="h1"></h1>
+    <p data-t="sub"></p>
+    <a class="btn" href="https://t.me/Lolotoko" data-t="cta"></a>
+  </div>
+  <div class="chat" aria-label="Example">
+    <small data-t="demo"></small>
+    <div class="b u" data-t="m1"></div>
+    <div class="b r" data-t="m2"></div>
+  </div>
+</div>
+
+<section>
+  <h2 data-t="sH"></h2>
+  <div class="grid">
+    <div class="card"><h3 data-t="s1h"></h3><p data-t="s1p"></p><div class="price" data-t="s1c"></div></div>
+    <div class="card"><h3 data-t="s2h"></h3><p data-t="s2p"></p><div class="price" data-t="s2c"></div></div>
+    <div class="card"><h3 data-t="s3h"></h3><p data-t="s3p"></p><div class="price" data-t="s3c"></div></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-t="wH"></h2>
+  <div class="work">
+    <div class="card"><h3 data-t="w1h"></h3><p data-t="w1p"></p><div class="tags"><span>Python</span><span>Django</span><span>Jinja</span><span>JS</span><span>SQL</span></div><p><a href="https://github.com/Miroslavchen">GitHub</a></p></div>
+    <div class="card"><h3 data-t="w2h"></h3><p data-t="w2p"></p><div class="tags"><span>Python</span><span>Bot API</span></div></div>
+  </div>
+</section>
+
+<section class="about">
+  <h2 data-t="aH"></h2>
+  <p data-t="a1"></p>
+  <p data-t="a2"></p>
+</section>
+
+<section>
+  <h2 data-t="cH"></h2>
+  <div class="contacts">
+    <a href="https://t.me/Lolotoko">Telegram @Lolotoko</a>
+    <a href="https://github.com/Miroslavchen">GitHub</a>
+    <span>Discord: halyia</span>
+  </div>
+  <footer data-t="foot"></footer>
+</section>
+</main>
+
+<script>
+const T={
+en:{h1:"I build bots and backends that save small businesses time.",sub:"Miroslav, 16, Czech Republic. Python, Django and Telegram bots, built to order.",cta:"Message me on Telegram",demo:"Concept demo: booking bot",m1:"Book a haircut tomorrow at 15:00",m2:"Done. Tomorrow, 15:00. I’ll remind you an hour before.",
+sH:"What I do",s1h:"Telegram and Discord bots",s1p:"Booking, FAQ, notifications, order intake, moderation.",s1c:"from 1 500 Kč",
+s2h:"Automation",s2p:"Python scripts for Excel and Google Sheets, reports, price parsers, mailings.",s2c:"from 1 000 Kč",
+s3h:"Websites with a backend",s3p:"Django sites with login, database and admin panel.",s3c:"from 3 000 Kč",
+wH:"Work",w1h:"Online store",w1p:"Product cards, registration and login, orders, roles, moderation and deletion, all managed inside the site.",
+w2h:"Anonymous chat bot",w2p:"Users talk without revealing their identity. Built to practise bot architecture.",
+aH:"About",a1:"I have been programming for 4–5 years, mostly Python and web. I like automating routine work and I’m strong in maths and exact sciences.",a2:"Languages: Ukrainian and Russian (native), English B2, Czech B1/B2, German A1/A2.",
+cH:"Contact",foot:"Prices are a starting point; the final price depends on the task. Reply within a day."},
+cs:{h1:"Vytvářím boty a backendy, které malým firmám šetří čas.",sub:"Miroslav, 16 let, Česká republika. Python, Django a Telegram boti na zakázku.",cta:"Napište mi na Telegram",demo:"Ukázka: bot pro rezervace",m1:"Objednej mě na střih zítra v 15:00",m2:"Hotovo. Zítra v 15:00. Hodinu předem vám připomenu.",
+sH:"Co dělám",s1h:"Telegram a Discord boti",s1p:"Rezervace, časté dotazy, upozornění, příjem objednávek, moderace.",s1c:"od 1 500 Kč",
+s2h:"Automatizace",s2p:"Python skripty pro Excel a Google Sheets, reporty, sledování cen, rozesílky.",s2c:"od 1 000 Kč",
+s3h:"Weby s backendem",s3p:"Django weby s přihlášením, databází a administrací.",s3c:"od 3 000 Kč",
+wH:"Ukázky práce",w1h:"E-shop",w1p:"Karty produktů, registrace a přihlášení, objednávky, role, moderace a mazání, vše řízené přímo na webu.",
+w2h:"Anonymní chat bot",w2p:"Uživatelé komunikují bez odhalení identity. Vytvořeno pro procvičení architektury botů.",
+aH:"O mně",a1:"Programuji 4–5 let, hlavně Python a web. Baví mě automatizovat rutinní práci a jsem silný v matematice a exaktních vědách.",a2:"Jazyky: ukrajinština a ruština (rodilý), angličtina B2, čeština B1/B2, němčina A1/A2.",
+cH:"Kontakt",foot:"Ceny jsou orientační, konečná cena závisí na zadání. Odpovídám do jednoho dne."},
+ru:{h1:"Делаю ботов и бэкенд, которые экономят время малому бизнесу.",sub:"Мирослав, 16 лет, Чехия. Python, Django и Telegram-боты на заказ.",cta:"Написать в Telegram",demo:"Демо-концепт: бот для записи",m1:"Запиши на стрижку завтра в 15:00",m2:"Готово. Завтра в 15:00. Напомню за час.",
+sH:"Что делаю",s1h:"Telegram- и Discord-боты",s1p:"Запись клиентов, FAQ, уведомления, приём заказов, модерация.",s1c:"от 1 500 Kč",
+s2h:"Автоматизация",s2p:"Python-скрипты для Excel и Google Sheets, отчёты, парсеры цен, рассылки.",s2c:"от 1 000 Kč",
+s3h:"Сайты с бэкендом",s3p:"Сайты на Django с авторизацией, базой данных и админ-панелью.",s3c:"от 3 000 Kč",
+wH:"Работы",w1h:"Интернет-магазин",w1p:"Карточки товаров, регистрация и вход, заказы, роли, модерация и удаление, всё управляется внутри сайта.",
+w2h:"Анонимный чат-бот",w2p:"Пользователи общаются, не раскрывая личность. Сделан для практики архитектуры ботов.",
+aH:"Обо мне",a1:"Программирую 4–5 лет, в основном Python и веб. Люблю автоматизировать рутину, силён в математике и точных науках.",a2:"Языки: украинский и русский (родные), английский B2, чешский B1/B2, немецкий A1/A2.",
+cH:"Контакты",foot:"Цены ориентировочные, итог зависит от задачи. Отвечаю в течение суток."}
+};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-t]').forEach(e=>{e.textContent=T[l][e.dataset.t]});
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let start='en';
+try{start=localStorage.getItem('lang')||(navigator.language||'en').slice(0,2)}catch(e){}
+setLang(T[start]?start:'en');
+</script>
+</body>
+</html>
